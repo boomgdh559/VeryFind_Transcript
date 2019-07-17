@@ -54,10 +54,16 @@ app.post('/upload-transcript', function (req, res) {
       return false;
     }
   }
+  
   if (checkValue(id, name, degree, dateGrade, gpa, json)) {
-    setNewTranscript(id, name, degree, dateGrade, gpa, json);
-    res.render('upload', { status: 'success' });
-
+    console.log("Am here");
+    transcript.setTranscript.sendTransaction(id, name, degree, dateGrade, gpa, json,(err,result)=>{
+      if(!err){
+        res.render('upload', { status: 'success' });
+      }else{
+        res.render('upload', { status: 'fail' });
+      } 
+    }) 
   } else {
     res.render('upload', { status: 'fail' });
   }
@@ -78,16 +84,3 @@ isConnectedBlockchain = () => {
     console.log('Connect Blockchain Fail!!!');
   }
 }
-
-// setNewTranscript = (id, name, degree, dateGrade, gpa, json) => {
-//   transcript.setTranscript.sendTransaction(id, name, degree, dateGrade, gpa, json, (err, result) => {
-//     if (!err) {
-//       console.log("Send Transcript Successful");
-//     } else {
-//       console.log("Error" + err);
-//     }
-
-//   })
-// }
-
-// setNewTranscript();
