@@ -70,11 +70,9 @@ app.post('/upload-transcript', function (req, res) {
 })
 
 
-const server = app.listen(process.env.PORT || 6020,()=>{
-  const host = server.address().address;
-  const port = server.address().port;
+app.listen(process.env.PORT || 6020,()=>{
   isConnectedBlockchain();
-  console.log("Server Running at "+host+port)
+  console.log("Server Running at localhost:6020");
 })
 
 isConnectedBlockchain = () => {
