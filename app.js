@@ -70,7 +70,7 @@ app.post('/upload-transcript', function (req, res) {
 })
 
 
-const server = app.listen(process.env.PORT || 8080,()=>{
+const server = app.listen(process.env.PORT || 6020,()=>{
   const host = server.address().address;
   const port = server.address().port;
   isConnectedBlockchain();
