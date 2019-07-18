@@ -1,6 +1,7 @@
 const { web3, transcript } = require('./Connection');
 const express = require('express');
 const app = express();
+//const http = require('http');
 //const path = require('path');
 var bodyParser = require('body-parser');
 
@@ -70,7 +71,7 @@ app.post('/upload-transcript', function (req, res) {
 })
 
 
-app.listen(process.env.PORT || 6020,()=>{
+app.listen(process.env.PORT || 6020,'localhost',()=>{
   isConnectedBlockchain();
   console.log("Server Running at localhost:6020");
 })
