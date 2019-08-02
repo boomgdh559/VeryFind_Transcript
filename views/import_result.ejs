@@ -1,0 +1,15 @@
+<% include partials/header.ejs %>
+<div class="container">
+    <div class="row justify-content-center" style="margin-top: 5%">
+        <div class="card text-white bg-success mb-3" style="max-width: 18rem">
+            <div class="card-header"><%=transcript.id%>
+        </div>
+            <div class="card-body">
+                <h5 class="card-title"><%=transcript.name%></h5>
+                <p class="card-text"><%=transcript.gpa%></p>
+                <p class="card-text"><%=transcript.date%></p>
+            </div>
+        </div>
+    </div>
+</div>
+<% include partials/footer.ejs %>
